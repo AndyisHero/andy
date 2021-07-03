@@ -1,0 +1,37 @@
+> stem(hb)
+
+  The decimal point is 1 digit(s) to the right of the |
+
+  13 | 28
+  14 | 0124567889
+  15 | 000458
+
+> stem(hb,scale = 2)
+
+  The decimal point is 1 digit(s) to the right of the |
+
+  13 | 2
+  13 | 8
+  14 | 0124
+  14 | 567889
+  15 | 0004
+  15 | 58
+
+> stem(hb,scale = 5)
+
+  The decimal point is at the |
+
+  132 | 0
+  134 | 
+  136 | 
+  138 | 0
+  140 | 00
+  142 | 0
+  144 | 00
+  146 | 00
+  148 | 000
+  150 | 000
+  152 | 
+  154 | 00
+  156 | 
+  158 | 0
