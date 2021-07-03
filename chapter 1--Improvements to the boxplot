@@ -1,0 +1,10 @@
+par(mfrow=c(3,1))
+hist(hb, freq = FALSE
+     , main="Histogram with kernel density plot , Modern Englishman")
+points(density(hb), type = "1")
+rug(hb)
+library(vioplot)
+vioplot(hb, horizontal=TRUE, col="gray")
+title("Violin plot, Modern Englishman")
+boxplot(hb, horizontal=TRUE
+        , main="Boxplot , Modern Englishman" , xlab="head breadth (mm)")
