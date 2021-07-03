@@ -1,0 +1,57 @@
+x5 <- 15 - rexp(250, rate = 0.5)
+par(mfrow=c(3,1))
+hist(x5, freq = FALSE, breaks = 20)
+points(density(x5), type = "1")
+rug(x5)
+library(vioplot)
+vioplot(x5, horizontal=TRUE, col="gray")
+boxplot(x5, horizontal=TRUE)
+x5_df <- data.frame(x5)
+p1 <- ggplot(x5_df , aes(x = x5))
+p1 <- p1 + geom_histogram(aes(y=..density..)
+                          , binwidth=0.5
+                          , colour="black", fill="white")
+p1 <- p1 + geom_density(alpha=0.1, fill="#FF6666")
+p1 <- p1 + geom_point(aes(y = -0.001)
+                      , position = position_jitter(height = 0.0005)
+                      , alpha = 1/5)
+p2 <- ggplot(x5_df , aes(x = "x5", y = x5))
+p2 <- p2 + geom_violin(fill = "gray50")
+p2 <- p2 + geom_boxplot(width = 0.2, alpha = 3/4)
+p2 <- p2 + coord_flip()
+p3 <- ggplot(x5_df , aes(x = "x5", y = x5))
+p3 <- p3 + geom_boxplot()
+p3 <- p3 + coord_flip()
+library(gridExtra)
+grid.arrange(p1, p2, p3, ncol=1)
+summary(x5)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  -1.73   12.24   13.37   12.90   14.49   14.99 
+> sd(x5)
+[1] 2.188953
+> skewness(x5)
+[1] -2.250274
+> kurtosis(x5)
+[1] 11.40937
+> stem(x5)
+
+  The decimal point is at the |
+
+  -1 | 7
+  -0 | 
+   0 | 
+   1 | 
+   2 | 
+   3 | 
+   4 | 
+   5 | 3
+   6 | 056689
+   7 | 7
+   8 | 11234688
+   9 | 03488
+  10 | 01226777789
+  11 | 001111233334555555669
+  12 | 00011122223333444455555566667777788888999
+  13 | 0000000001111111112222233333444444555666666777788889999
+  14 | 00000011111112222223333334444444455555555555556666666777777888888888+10
+  15 | 0000000000
